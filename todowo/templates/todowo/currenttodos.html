@@ -1,0 +1,26 @@
+{% extends 'todowo/base.html' %}
+
+{% block content %}
+
+<br>
+Current
+
+    <ul>
+        {% for todo in todos %}
+        <li>
+            <!-- <a> ... </a> eta diye link create korse etar vitor dukar jnno -->
+            <a href ={% url 'viewtodo' todo.id %}>
+            {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}
+            {% if todo.memo %} - {{ todo.memo }} {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+
+
+
+    </ul>
+
+
+
+
+{% endblock %}

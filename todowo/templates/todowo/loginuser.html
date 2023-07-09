@@ -1,0 +1,17 @@
+
+
+
+{% extends 'todowo/base.html' %}
+
+{% block content %}
+{{ error }}
+<br>
+<form method='POST'>
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">LOG IN</button>
+</form>
+
+
+{% endblock %}
+
